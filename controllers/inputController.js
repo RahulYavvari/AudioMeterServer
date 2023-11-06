@@ -1,3 +1,5 @@
+const User = require("../models/userdata");
+
 const getInput = (req, res) => {
     res.render("input");
 }
@@ -8,7 +10,18 @@ const postInput = (req, res) => {
 
     console.log(`[LOG: POST REQ TYPE:INPUT] ${name} ${age}`);
 
-    res.redirect("test");
+    const user = new User({
+        name: name,
+        age: age
+    });
+
+    user.save()
+        .then(() => {
+            res.redirect("test");
+        })
+        .catch(() => {
+            console.log(err);
+        });
 }
 
 module.exports = {
