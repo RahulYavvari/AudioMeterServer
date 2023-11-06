@@ -1,14 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
 const homeRoute = require("./routes/homeRoute");
 const inputRoute = require("./routes/inputRoute");
 const testRoute = require("./routes/testRoute");
 const reportsRoute = require("./routes/reportsRoute");
 
-const dbURI = "mongodb://0.0.0.0:27017/AudioMeterDB";
+dotenv.config();
 
-mongoose.connect(dbURI)
+const PORT = process.env.PORT;
+
+mongoose.connect(process.env.dbURI)
     .then((result) => {
         app.listen(PORT, () => {
             console.log(`[LOG] Connected and Listening on [PORT]: ${PORT}`);
@@ -17,7 +20,7 @@ mongoose.connect(dbURI)
     .catch((err) => console.log(err));
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+
 
 app.set("view engine", "ejs");
 
