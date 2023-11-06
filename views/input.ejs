@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/input.css">
+    <title>Data</title>
+</head>
+
+<body>
+
+    <div class="menu">
+        <div class="option-holder">
+            <div class="option">
+                <a href="./home"><img class="option-svg" alt="home-button" src="../images/home.svg"></a>
+            </div>
+            <div class="option">
+                <a href="./reports"><img class="option-svg" alt="reports-button" src="../images/reports.svg"></a>
+            </div>
+            <div class="option">
+                <img class="option-svg" alt="option-button" src="../images/info.svg">
+            </div>
+        </div>
+    </div>
+
+
+    <form method="POST" action="/input">
+        <div class="flex-box">
+            <input type="text" class="name" placeholder="Name" name="name" required>
+            <input type="number" class="age" placeholder="Age" name="age" required>
+        </div>
+        <a href="./test"><button class="begin-button" type="value">Let's Begin</button></a>
+    </form>
+</body>
+
+</html>
