@@ -11,7 +11,7 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-mongoose.connect(process.env.dbURI)
+mongoose.connect(process.env.DB_CONNECTION_STRING)
     .then((result) => {
         app.listen(PORT, () => {
             console.log(`[LOG] Connected and Listening on [PORT]: ${PORT}`);
